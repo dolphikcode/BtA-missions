@@ -1,0 +1,11 @@
+{
+  "id": "e1111111-0000-4000-8000-000000000001",
+  "name": "Field Backpack",
+  "type": "luggage",
+  "description": "Standard issue field backpack. Required to carry gear on missions. Capacity: 20 units.",
+  "image": "images/backpack.png",
+  "size": 20,
+  "price": 100,
+  "multipliers": { "xp": 1.0, "health": 1.0, "knowledge": 1.0, "cash": 1.0 },
+  "images": ["images/backpack.png"]
+}
