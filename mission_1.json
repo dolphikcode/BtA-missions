@@ -3,7 +3,6 @@
   "name": "First Operations",
   "description": "Your first field assignment. Travel from Warsaw to Kraków and prove you can operate in the field. Earn the required XP before the deadline and keep your health above the minimum threshold.",
   "timeLimitDays": 14,
-  "requiredXp": 2000,
   "requiredHealth": 20,
   "requiredKnowledge": 0,
   "requiredCash": 0,
@@ -19,7 +18,7 @@
   "journeyToLat": 50.0647,
   "journeyToLng": 19.945,
   "journeyDistanceKm": 295,
-  "journeyXpPerMeter": 0.007,
+  "journeyXpPerMeter": 0.8,
   "badgeImage": "images/badge_mission1.png",
   "requiredEquipmentIds": [],
   "images": ["images/badge_mission1.png"]
