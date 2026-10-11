@@ -1,0 +1,9 @@
+{
+  "exercises": [
+    { "id": "b3a136f0-b8e0-4ce2-9ce8-b74c19aaa5a1", "name": "Daily steps", "unit": "steps", "xpPerUnit": 0.001, "healthPerUnit": 0.001, "cashReward": 0.0001, "missionPointsPerUnit": { "cardio": 0.01 } },
+    { "id": "d3c84ed9-de16-49a3-b7e3-444f5d982c6f", "name": "Walk", "unit": "km", "xpPerUnit": 10.0, "healthPerUnit": 0.1, "cashReward": 2.0, "missionPointsPerUnit": { "cardio": 100.0 } },
+    { "id": "b396182c-534d-4e08-b508-3b2312c1d8a9", "name": "Pushups", "unit": "reps", "xpPerUnit": 0.1, "healthPerUnit": 0.1, "cashReward": 0.5, "missionPointsPerUnit": { "strength": 1.0 } },
+    { "id": "b396182c-534d-4e08-b508-3b2312c1d125", "name": "Squats", "unit": "reps", "xpPerUnit": 0.1, "healthPerUnit": 0.1, "cashReward": 0.5, "missionPointsPerUnit": { "strength": 1.0 } },
+    { "id": "d3cabc29-de16-49a3-b7e3-444f5d982c6f", "name": "Swim", "unit": "km", "xpPerUnit": 100.0, "healthPerUnit": 2.0, "cashReward": 20.0, "missionPointsPerUnit": { "cardio": 400.0, "strength": 50.0 } }
+  ]
+}

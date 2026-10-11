@@ -1,0 +1,82 @@
+{
+  "id": "a1111111-0000-4000-8000-000000000001",
+  "title": "Pierwsze operacje",
+  "description": "Twoje pierwsze zadanie terenowe. Kontakt w Krakowie przestał się odzywać po przejęciu trasy kuriera. Ustal, co się stało.",
+  "thematicMotif": "Wdrożenie szkoleniowe — przechwycenie kuriera",
+  "coverImage": "images/badge_mission1.png",
+  "images": ["images/badge_mission1.png"],
+  "operations": [
+    {
+      "id": "a1111111-1000-4000-8000-000000000001",
+      "sortOrder": 1,
+      "title": "Milczący kontakt",
+      "location": "Kraków — Stare Miasto",
+      "openingText": "Drzwi kryjówki były otwarte. Twój kontakt wyszedł w pośpiechu — ale zostawił dla ciebie siatkę.",
+      "cliffhangerText": "Trop urywa się nad rzeką. Cokolwiek znalazł twój kontakt, ktoś inny chciał tego bardziej.",
+      "returnMessageText": "Kryjówka jest pusta. Okno operacji się zamyka.",
+      "gridColumns": 6,
+      "gridRows": 8,
+      "optimalDays": 3,
+      "deadlineDays": 7,
+      "unlockAtProgress": 1.0,
+      "rewardXp": 150,
+      "rewardHealth": 0.02,
+      "rewardKnowledge": 20,
+      "rewardCash": 40,
+      "tiles": [
+        { "id": "t1-entry", "col": 2, "row": 7, "type": "neutral", "isEntry": true, "chronologicalOrder": 0, "contentTitle": "Kryjówka", "contentBody": "Drzwi są uchylone. W środku wszystko spakowane — oprócz mapy miasta z narysowaną siatką." },
+        { "id": "t1-n1", "col": 2, "row": 6, "type": "neutral", "chronologicalOrder": 0, "unlockCosts": [{ "resource": "cardio", "amount": 20 }], "contentTitle": "Przeszukanie", "contentBody": "Przeszukujesz pokoje od góry do dołu. Ktoś profesjonalnie wytarł wszystkie powierzchnie." },
+        { "id": "t1-n2", "col": 3, "row": 7, "type": "neutral", "chronologicalOrder": 0, "unlockCosts": [{ "resource": "strength", "amount": 15 }], "contentTitle": "Regał", "contentBody": "Za ciężkim regałem znajdujesz świeże rysy na ścianie. Coś tu było schowane." },
+        { "id": "t1-i1", "col": 3, "row": 6, "type": "intel", "chronologicalOrder": 1, "unlockCosts": [{ "resource": "knowledge", "amount": 20 }], "hintCostCash": 10, "contentTitle": "Fragment I — Kurier", "contentBody": "Podarta notatka: „Kurier przechodzi przez Planty o zmierzchu, szara czapka, lewa kieszeń”. Twój kontakt kogoś obserwował." },
+        { "id": "t1-i2", "col": 2, "row": 5, "type": "intel", "chronologicalOrder": 2, "unlockCosts": [{ "resource": "cardio", "amount": 30 }], "puzzleId": "p1-quiz", "puzzleRequired": false, "hintCostCash": 15, "contentTitle": "Fragment II — Spotkanie", "contentBody": "Bilet tramwajowy skasowany o 18:42. Trasa mija Wawel. Spotkanie nie było przypadkowe — było zaplanowane." },
+        { "id": "t1-threat", "col": 3, "row": 5, "type": "threat", "chronologicalOrder": 3, "unlockCosts": [{ "resource": "cardio", "amount": 25 }, { "resource": "strength", "amount": 10 }], "hintCostCash": 15, "contentTitle": "Obserwator na rogu", "threatOptions": [
+          { "action": "FIGHT", "costs": [{ "resource": "strength", "amount": 40 }], "successOutcome": "Obserwator nie zdążył zareagować. Jego radio jest teraz twoje.", "failureOutcome": "Stawiał większy opór, niż się spodziewałeś, zanim padł." },
+          { "action": "FLEE", "costs": [{ "resource": "cardio", "amount": 35 }], "successOutcome": "Gubisz go w tłumie na targu, zanim zdąży zadzwonić." },
+          { "action": "BRIBE", "costs": [{ "resource": "cash", "amount": 50 }], "successOutcome": "Chowa pieniądze do kieszeni i zapomina twoją twarz." },
+          { "action": "WAIT", "costs": [], "successOutcome": "Po dwudziestu minutach sprawdza telefon i odchodzi." }
+        ] },
+        { "id": "t1-res", "col": 4, "row": 6, "type": "resource", "chronologicalOrder": 0, "unlockCosts": [{ "resource": "cardio", "amount": 20 }], "contentTitle": "Schowek kontakta", "contentBody": "Wodoodporna saszetka pod zlewem: pieniądze operacyjne i czysty telefon.", "rewardXp": 30, "rewardCash": 60 },
+        { "id": "t1-obj", "col": 4, "row": 4, "type": "objective", "chronologicalOrder": 4, "unlockCosts": [{ "resource": "cardio", "amount": 40 }, { "resource": "strength", "amount": 20 }], "hintCostCash": 20, "contentTitle": "Poczta głuszyna", "contentBody": "Pod trzecią ławką na bulwarze: notatnik twojego kontaktu. Połowa stron wyrwana — ale mapa przetrwała." }
+      ],
+      "puzzles": [
+        { "id": "p1-quiz", "type": "quiz", "difficulty": 1, "flavorText": "Składasz w całość oś czasu obserwacji.", "content": { "question": "Bilet skasowano o 18:42. Co to mówi o spotkaniu?", "options": ["Było spontaniczne", "Było zaplanowane", "Nigdy się nie odbyło", "Było prowokacją"], "correctIndex": 1, "explanation": "Bilet użyty o konkretnej godzinie oznacza zaplanowaną trasę." } }
+      ]
+    },
+    {
+      "id": "a1111111-1000-4000-8000-000000000002",
+      "sortOrder": 2,
+      "title": "Przekaz",
+      "location": "Wzgórze Wawelskie",
+      "openingText": "Mapa z notatnika prowadzi pod górę. Dziś w nocy kurier dokona wymiany — a ty zamierzasz patrzeć.",
+      "cliffhangerText": "Kurier się nie pojawił. Albo przekaz przeniesiono — albo ktoś wiedział, że przyjdziesz.",
+      "returnMessageText": "Punkt obserwacyjny jest pusty. Okno minęło.",
+      "gridColumns": 6,
+      "gridRows": 8,
+      "optimalDays": 4,
+      "deadlineDays": 10,
+      "unlockAtProgress": 1.0,
+      "rewardXp": 250,
+      "rewardHealth": 0.03,
+      "rewardKnowledge": 30,
+      "rewardCash": 80,
+      "tiles": [
+        { "id": "t2-entry", "col": 3, "row": 7, "type": "neutral", "isEntry": true, "chronologicalOrder": 0, "contentTitle": "Punkt obserwacyjny", "contentBody": "Wszędzie turyści. Idealne przykrycie. Zajmujesz pozycję przy murze i liczysz twarze." },
+        { "id": "t2-n1", "col": 3, "row": 6, "type": "neutral", "chronologicalOrder": 0, "unlockCosts": [{ "resource": "cardio", "amount": 30 }], "contentTitle": "Wieże", "contentBody": "Z wieży widać obie bramy. Dwóch obserwatorów, po jednym przy każdej — przekaz jest chroniony." },
+        { "id": "t2-n2", "col": 2, "row": 7, "type": "neutral", "chronologicalOrder": 0, "unlockCosts": [{ "resource": "strength", "amount": 25 }], "contentTitle": "Brama techniczna", "contentBody": "Zamek w bramie technicznej jest tani. Dziesięć sekund nacisku i ustępuje." },
+        { "id": "t2-i1", "col": 2, "row": 6, "type": "intel", "chronologicalOrder": 5, "unlockCosts": [{ "resource": "knowledge", "amount": 15 }], "isGenerative": true, "narrativeAnchorSummary": "Gracz przechwytuje zakodowaną rozmowę radiową między dwoma obserwatorami; wskazówka o prawdziwej lokalizacji przekazu", "hintCostCash": 15, "contentTitle": "Fragment III — Przechwyt" },
+        { "id": "t2-i2", "col": 4, "row": 6, "type": "intel", "chronologicalOrder": 6, "unlockCosts": [{ "resource": "cardio", "amount": 35 }], "puzzleId": "p2-math", "puzzleRequired": true, "hintCostCash": 20, "contentTitle": "Fragment IV — Suma kontrolna", "contentBody": "Ostatnia strona notatnika to referencja siatki zakodowana sumą kontrolną. Rozwiąż ją, by znaleźć prawdziwe miejsce przekazu." },
+        { "id": "t2-threat", "col": 4, "row": 5, "type": "threat", "chronologicalOrder": 7, "unlockCosts": [{ "resource": "strength", "amount": 30 }], "hintCostCash": 15, "contentTitle": "Patrol ochrony", "threatOptions": [
+          { "action": "FIGHT", "costs": [{ "resource": "strength", "amount": 50 }], "successOutcome": "Szybko i cicho. Patrol pada, zanim radio kliknie.", "failureOutcome": "Walka przyciąga uwagę. Kończysz ją, ale zamek jest czujny." },
+          { "action": "FLEE", "costs": [{ "resource": "cardio", "amount": 40 }], "successOutcome": "W dół zamkowych schodów, przez tłum turystów. Zniknąłeś." },
+          { "action": "BRIBE", "costs": [{ "resource": "cash", "amount": 75 }], "successOutcome": "Złożony banknot zmienia właściciela. Patrol nic nie pamięta." },
+          { "action": "WAIT", "costs": [], "successOutcome": "Czekasz w cieniu, aż trasa patrolu zabiera ich dalej." }
+        ] },
+        { "id": "t2-res", "col": 1, "row": 6, "type": "resource", "chronologicalOrder": 0, "unlockCosts": [{ "resource": "cardio", "amount": 25 }], "contentTitle": "Szopa ogrodnika", "contentBody": "Ogrodnik zostawił zapasowy klucz pod doniczką — i termos, który kupuje ci ciepłą godzinę obserwacji.", "rewardXp": 40, "rewardCash": 30, "rewardKnowledge": 10 },
+        { "id": "t2-obj", "col": 3, "row": 4, "type": "objective", "chronologicalOrder": 8, "isLeadTile": true, "unlockCosts": [{ "resource": "cardio", "amount": 50 }, { "resource": "strength", "amount": 30 }], "hintCostCash": 25, "contentTitle": "Wymiana", "contentBody": "Szara czapka, lewa kieszeń — notatnik nie kłamał. Fotografujesz przekaz z kolumnady. Zadanie wykonane: teraz wiesz, kim oni są." }
+      ],
+      "puzzles": [
+        { "id": "p2-math", "type": "math", "difficulty": 2, "timeLimitSeconds": 120, "flavorText": "Suma kontrolna to prosty arytmetyczny klucz siatki.", "content": { "question": "Klucz referencyjny to 7 × 8 − 19. Odkoduj komórkę siatki.", "answer": 37, "tolerance": 0 } }
+      ]
+    }
+  ]
+}

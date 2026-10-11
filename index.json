@@ -1,5 +1,9 @@
 {
-  "lastUpdate": "2026-09-25 08:30",
-  "missions": ["mission_1.json"],
-  "equipment": ["equipment_1.json"]
+  "formatVersion": 2,
+  "lastUpdate": "2026-01-15 12:00",
+  "exercises": ["exercises.json"],
+  "missions": {
+    "en": ["mission_1.en.json"],
+    "pl": ["mission_1.pl.json"]
+  }
 }
