@@ -31,8 +31,6 @@ tiles by spending points or solving in-app quiz games.
   "sortOrder": 1,
   "gridColumns": 10,
   "gridRows": 10,
-  "optimalDays": 14,
-  "deadlineDays": 60,
   "rewardXp": 300,
   "rewardHealth": 0.05,
   "rewardKnowledge": 50,
@@ -55,8 +53,6 @@ tiles by spending points or solving in-app quiz games.
 | `coverImage` | optional cover art (also under `images/`) |
 | `sortOrder` | unlock order — mission N unlocks at 80% progress of mission N-1 |
 | `gridColumns` / `gridRows` | tile grid size (10x10 by default) |
-| `optimalDays` | target completion time (informational) |
-| `deadlineDays` | mission expires this many days after activation |
 | `rewardXp` / `rewardHealth` / `rewardKnowledge` / `rewardCash` | granted once at 100% completion |
 
 ### Tile fields
@@ -86,17 +82,23 @@ corner, valid types, positive `cost` on cost tiles.
 ## Generating a mission
 
 ```bash
-python generate_mission.py --title "First Recon" --image images/mission_1.jpg \
-    --out mission_1.json
+# drop images/mission_X.jpg into the repo, then:
+python generate_mission.py
 
-# custom cost ranges (MIN:MAX per type), reproducible output
-python generate_mission.py --title "Deep Cover" --image images/mission_2.jpg \
-    --cardio 15:40 --strength 15:40 --knowledge 8:25 \
-    --reward-xp 500 --out mission_2.json --seed 42
+# optional overrides: custom title, cost ranges (MIN:MAX per type), reproducible output
+python generate_mission.py --title "Deep Cover" --cardio 15:40 --reward-xp 500 --seed 42
 ```
 
-Defaults: 10x10 grid, 40% quiz tiles, the remaining 60% split evenly between
-cardio/strength/knowledge with costs drawn from 10:30 / 10:30 / 5:20.
-Costs are rolled first, then all tiles are shuffled onto the grid.
+The next mission number X is computed automatically (highest existing
+`mission_N.json` + 1); `--title` defaults to `Mission X`, `--image` to
+`images/mission_X.jpg`, `--out` to `mission_X.json` and `--sort-order` to X.
+The script fails early if the image file doesn't exist.
+
+All generation defaults live in `mission_settings.json` — edit that file to
+tune grid size, cost ranges, quiz fraction and rewards; CLI flags override
+per run. Shipped defaults: 10x10 grid, 40% quiz tiles, the remaining 60%
+split evenly between cardio/strength/knowledge with costs drawn from
+10:30 / 10:30 / 5:20. Costs are rolled first, then all tiles are shuffled
+onto the grid.
 
 Always run `python validate_missions.py` before pushing.

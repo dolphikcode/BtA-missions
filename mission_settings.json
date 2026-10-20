@@ -1,0 +1,11 @@
+{
+    "grid": "10x10",
+    "cardio": "10:30",
+    "strength": "10:30",
+    "knowledge": "5:20",
+    "quizFraction": 0.4,
+    "rewardXp": 300,
+    "rewardHealth": 0.05,
+    "rewardKnowledge": 50,
+    "rewardCash": 100.0
+}
