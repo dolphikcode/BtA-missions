@@ -1,9 +1,10 @@
 {
-  "formatVersion": 2,
-  "lastUpdate": "2026-01-15 12:00",
-  "exercises": ["exercises.json"],
-  "missions": {
-    "en": ["mission_1.en.json"],
-    "pl": ["mission_1.pl.json"]
-  }
+  "formatVersion": 3,
+  "lastUpdate": "2026-10-19 20:48",
+  "exercises": [
+    "exercises.json"
+  ],
+  "missions": [
+    "mission_1.json"
+  ]
 }
