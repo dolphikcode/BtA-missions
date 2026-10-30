@@ -11,16 +11,37 @@
   <h1>Spanish Verbs</h1>
   <div id="score">0 ✓ · 0 ✗</div>
 </header>
-<main id="quiz">
-  <div id="prompt" class="card"></div>
-  <div id="options"></div>
-  <div id="feedback"></div>
-  <button id="next" class="hidden">Next</button>
+<nav>
+  <button data-mode="list" class="mode active">Verbs</button>
+  <button data-mode="train" class="mode">Train</button>
+  <button data-mode="quiz" class="mode">Quiz</button>
+</nav>
+<main>
+  <section id="list"></section>
+  <section id="verb" class="hidden">
+    <div id="verb-head"></div>
+    <table id="conj"></table>
+    <button id="train-verb">Train this verb</button>
+    <button id="verb-back">Back</button>
+  </section>
+  <section id="train" class="hidden">
+    <div id="train-prompt" class="card"></div>
+    <input id="train-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="conjugated form">
+    <button id="train-check">Check</button>
+    <div id="train-feedback"></div>
+    <button id="train-next" class="hidden">Next</button>
+  </section>
+  <section id="quiz" class="hidden">
+    <div id="prompt" class="card"></div>
+    <div id="options"></div>
+    <div id="feedback"></div>
+    <button id="next" class="hidden">Next</button>
+  </section>
 </main>
 <footer>
   <button id="btn-info">System info</button>
-  <button id="btn-neg1">Negative: bad host</button>
-  <button id="btn-neg2">Negative: no permission</button>
+  <button id="btn-neg1">Neg: bad host</button>
+  <button id="btn-neg2">Neg: no perm</button>
   <pre id="log"></pre>
 </footer>
 <script src="app.js"></script>
