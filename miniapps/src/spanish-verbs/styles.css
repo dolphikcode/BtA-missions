@@ -1,0 +1,11 @@
+body { font-family: system-ui, sans-serif; margin: 0; padding: 16px; background: #0f1115; color: #e6e6e6; }
+header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+h1 { font-size: 1.3rem; margin: 0; }
+.card { background: #1b1f27; border: 1px solid #2a2f3a; border-radius: 10px; padding: 16px; margin-bottom: 12px; }
+#options button, #next { display: block; width: 100%; padding: 14px; margin: 8px 0; border: 1px solid #2a2f3a; border-radius: 10px; background: #232836; color: #e6e6e6; font-size: 1rem; }
+#options button.correct { border-color: #22c55e; background: #14301d; }
+#options button.wrong { border-color: #ef4444; background: #331518; }
+#feedback { min-height: 1.4em; margin: 8px 0; }
+.hidden { display: none; }
+footer button { margin: 4px 4px 4px 0; padding: 8px 10px; font-size: 0.8rem; background: #232836; color: #e6e6e6; border: 1px solid #2a2f3a; border-radius: 8px; }
+pre { font-size: 0.75rem; white-space: pre-wrap; color: #9aa4b2; }

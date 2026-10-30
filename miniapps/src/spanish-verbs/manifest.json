@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "appId": "com.happyquokka.miniapps.spanish-verbs",
+  "name": "Spanish Verbs",
+  "version": "1.0.0",
+  "versionCode": 1,
+  "minHostApiLevel": 1,
+  "entry": "index.html",
+  "icon": "assets/icon.svg",
+  "type": "language-spanish",
+  "permissions": ["storage", "rewards"],
+  "allowedHosts": [],
+  "orientation": "portrait"
+}
