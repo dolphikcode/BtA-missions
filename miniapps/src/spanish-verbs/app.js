@@ -1,28 +1,5 @@
 'use strict';
 
-var VERBS = [
-  ['hablar', 'to speak', { presente: ['hablo','hablas','habla','hablamos','habláis','hablan'], indefinido: ['hablé','hablaste','habló','hablamos','hablasteis','hablaron'], futuro: ['hablaré','hablarás','hablará','hablaremos','hablaréis','hablarán'] }],
-  ['comer', 'to eat', { presente: ['como','comes','come','comemos','coméis','comen'], indefinido: ['comí','comiste','comió','comimos','comisteis','comieron'], futuro: ['comeré','comerás','comerá','comeremos','comeréis','comerán'] }],
-  ['vivir', 'to live', { presente: ['vivo','vives','vive','vivimos','vivís','viven'], indefinido: ['viví','viviste','vivió','vivimos','vivisteis','vivieron'], futuro: ['viviré','vivirás','vivirá','viviremos','viviréis','vivirán'] }],
-  ['ser', 'to be', { presente: ['soy','eres','es','somos','sois','son'], indefinido: ['fui','fuiste','fue','fuimos','fuisteis','fueron'], futuro: ['seré','serás','será','seremos','seréis','serán'] }],
-  ['estar', 'to be', { presente: ['estoy','estás','está','estamos','estáis','están'], indefinido: ['estuve','estuviste','estuvo','estuvimos','estuvisteis','estuvieron'], futuro: ['estaré','estarás','estará','estaremos','estaréis','estarán'] }],
-  ['ir', 'to go', { presente: ['voy','vas','va','vamos','vais','van'], indefinido: ['fui','fuiste','fue','fuimos','fuisteis','fueron'], futuro: ['iré','irás','irá','iremos','iréis','irán'] }],
-  ['tener', 'to have', { presente: ['tengo','tienes','tiene','tenemos','tenéis','tienen'], indefinido: ['tuve','tuviste','tuvo','tuvimos','tuvisteis','tuvieron'], futuro: ['tendré','tendrás','tendrá','tendremos','tendréis','tendrán'] }],
-  ['hacer', 'to do', { presente: ['hago','haces','hace','hacemos','hacéis','hacen'], indefinido: ['hice','hiciste','hizo','hicimos','hicisteis','hicieron'], futuro: ['haré','harás','hará','haremos','haréis','harán'] }],
-  ['poder', 'can', { presente: ['puedo','puedes','puede','podemos','podéis','pueden'], indefinido: ['pude','pudiste','pudo','pudimos','pudisteis','pudieron'], futuro: ['podré','podrás','podrá','podremos','podréis','podrán'] }],
-  ['decir', 'to say', { presente: ['digo','dices','dice','decimos','decís','dicen'], indefinido: ['dije','dijiste','dijo','dijimos','dijisteis','dijeron'], futuro: ['diré','dirás','dirá','diremos','diréis','dirán'] }],
-  ['querer', 'to want', { presente: ['quiero','quieres','quiere','queremos','queréis','quieren'], indefinido: ['quise','quisiste','quiso','quisimos','quisisteis','quisieron'], futuro: ['querré','querrás','querrá','querremos','querréis','querrán'] }],
-  ['saber', 'to know', { presente: ['sé','sabes','sabe','sabemos','sabéis','saben'], indefinido: ['supe','supiste','supo','supimos','supisteis','supieron'], futuro: ['sabré','sabrás','sabrá','sabremos','sabréis','sabrán'] }],
-  ['poner', 'to put', { presente: ['pongo','pones','pone','ponemos','ponéis','ponen'], indefinido: ['puse','pusiste','puso','pusimos','pusisteis','pusieron'], futuro: ['pondré','pondrás','pondrá','pondremos','pondréis','pondrán'] }],
-  ['salir', 'to leave', { presente: ['salgo','sales','sale','salimos','salís','salen'], indefinido: ['salí','saliste','salió','salimos','salisteis','salieron'], futuro: ['saldré','saldrás','saldrá','saldremos','saldréis','saldrán'] }],
-  ['venir', 'to come', { presente: ['vengo','vienes','viene','venimos','venís','vienen'], indefinido: ['vine','viniste','vino','vinimos','vinisteis','vinieron'], futuro: ['vendré','vendrás','vendrá','vendremos','vendréis','vendrán'] }],
-  ['ver', 'to see', { presente: ['veo','ves','ve','vemos','veis','ven'], indefinido: ['vi','viste','vio','vimos','visteis','vieron'], futuro: ['veré','verás','verá','veremos','veréis','verán'] }],
-  ['dar', 'to give', { presente: ['doy','das','da','damos','dais','dan'], indefinido: ['di','diste','dio','dimos','disteis','dieron'], futuro: ['daré','darás','dará','daremos','daréis','darán'] }],
-  ['pensar', 'to think', { presente: ['pienso','piensas','piensa','pensamos','pensáis','piensan'], indefinido: ['pensé','pensaste','pensó','pensamos','pensasteis','pensaron'], futuro: ['pensaré','pensarás','pensará','pensaremos','pensaréis','pensarán'] }],
-  ['dormir', 'to sleep', { presente: ['duermo','duermes','duerme','dormimos','dormís','duermen'], indefinido: ['dormí','dormiste','durmió','dormimos','dormisteis','durmieron'], futuro: ['dormiré','dormirás','dormirá','dormiremos','dormiréis','dormirán'] }],
-  ['pedir', 'to ask for', { presente: ['pido','pides','pide','pedimos','pedís','piden'], indefinido: ['pedí','pediste','pidió','pedimos','pedisteis','pidieron'], futuro: ['pediré','pedirás','pedirá','pediremos','pediréis','pedirán'] }]
-];
-var PRONOUNS = ['yo', 'tú', 'él/ella', 'nosotros', 'vosotros', 'ellos/ellas'];
 var TENSES = ['presente', 'indefinido', 'futuro'];
 
 var state = { correct: 0, wrong: 0, streak: 0 };
@@ -86,7 +63,7 @@ function renderList() {
   VERBS.forEach(function (v) {
     var b = document.createElement('button');
     b.className = 'verb';
-    b.innerHTML = '<b>' + v[0] + '</b><small>' + v[1] + '</small>';
+    b.innerHTML = '<b>' + v[0] + '</b><small>' + v[1] + ' · ' + (v[3] === 'r' ? 'regular' : 'irregular') + '</small>';
     b.onclick = function () { currentVerb = v; renderVerb(v); show('verb'); };
     el.appendChild(b);
   });
@@ -111,7 +88,7 @@ function nextTrain() {
   var tense = pick(TENSES);
   var person = Math.floor(Math.random() * 6);
   trainQ = { verb: v, tense: tense, person: person, form: v[2][tense][person] };
-  $('train-prompt').innerHTML = '<b>' + v[0] + '</b> (' + v[1] + ') — ' + tense + '<br><span style="font-size:1.3em">' + PRONOUNS[person] + ' ___</span>';
+  $('train-prompt').innerHTML = '<b>' + v[0] + '</b> (' + v[1] + ') — ' + tense + '<br><span style="font-size:1.3em">' + PRONOUNS[person] + ' (' + PRONOUN_EN[person] + ') ___</span>';
   var input = $('train-input');
   input.value = ''; input.className = ''; input.disabled = false; input.focus();
   $('train-feedback').textContent = '';
@@ -144,7 +121,7 @@ function nextQuiz() {
   }
   options.sort(function () { return Math.random() - 0.5; });
   current = { right: rightForm };
-  $('prompt').innerHTML = '<b>' + v[0] + '</b> (' + v[1] + ') — ' + tense + '<br><span style="font-size:1.4em">' + PRONOUNS[person] + ' ___</span>';
+  $('prompt').innerHTML = '<b>' + v[0] + '</b> (' + v[1] + ') — ' + tense + '<br><span style="font-size:1.4em">' + PRONOUNS[person] + ' (' + PRONOUN_EN[person] + ') ___</span>';
   var opts = $('options');
   opts.innerHTML = '';
   options.forEach(function (opt) {

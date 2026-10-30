@@ -3,13 +3,13 @@
     {
       "appId": "com.happyquokka.miniapps.spanishverbs",
       "name": "Spanish Verbs",
-      "version": "1.1.0",
-      "versionCode": 2,
+      "version": "1.2.0",
+      "versionCode": 5,
       "type": "language-spanish",
       "iconUrl": null,
-      "packageUrl": "com.happyquokka.miniapps.spanishverbs-1.1.0.miniapp",
-      "sha256": "3f9e4bd42935ae4874e6a890e30571fc36bf3ac2c9a1ff252970f0105d0fce91",
-      "sizeBytes": 5526
+      "packageUrl": "com.happyquokka.miniapps.spanishverbs-1.2.0.miniapp",
+      "sha256": "61813b2868d2fbb284ca1205b7584184bb58fd240972980249c1f1e8f10dfe13",
+      "sizeBytes": 5753
     }
   ]
 }
