@@ -1,9 +1,15 @@
 {
     "grid": "10x10",
-    "cardio": "10:30",
+    "cardio": "100:1000",
     "strength": "10:30",
-    "knowledge": "5:20",
-    "quizFraction": 0.4,
+    "knowledge": "3:10",
+    "fractions": {
+        "cardio": 0.30,
+        "strength": 0.30,
+        "knowledge": 0.20,
+        "quiz": 0.20
+    },
+    "imagePrompt": "isometric top-down map artwork for a covert-ops mobile game mission {number}, square image, rich detail, muted palette",
     "rewardXp": 300,
     "rewardHealth": 0.05,
     "rewardKnowledge": 50,

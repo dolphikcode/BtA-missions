@@ -1,0 +1,695 @@
+{
+  "id": "ff5eaf42-e1ef-4a6d-8e6e-7925a3f390a4",
+  "title": "Mission 4",
+  "sortOrder": 4,
+  "image": "images/mission_4.jpg",
+  "gridColumns": 10,
+  "gridRows": 10,
+  "rewardXp": 300,
+  "rewardHealth": 0.05,
+  "rewardKnowledge": 50,
+  "rewardCash": 100,
+  "tiles": [
+    {
+      "id": "mission4-r0c0",
+      "col": 0,
+      "row": 0,
+      "type": "cardio",
+      "cost": 560.83
+    },
+    {
+      "id": "mission4-r0c1",
+      "col": 1,
+      "row": 0,
+      "type": "cardio",
+      "cost": 223.55
+    },
+    {
+      "id": "mission4-r0c2",
+      "col": 2,
+      "row": 0,
+      "type": "cardio",
+      "cost": 733.6
+    },
+    {
+      "id": "mission4-r0c3",
+      "col": 3,
+      "row": 0,
+      "type": "knowledge",
+      "cost": 6.31
+    },
+    {
+      "id": "mission4-r0c4",
+      "col": 4,
+      "row": 0,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r0c5",
+      "col": 5,
+      "row": 0,
+      "type": "cardio",
+      "cost": 337.34
+    },
+    {
+      "id": "mission4-r0c6",
+      "col": 6,
+      "row": 0,
+      "type": "strength",
+      "cost": 26.03
+    },
+    {
+      "id": "mission4-r0c7",
+      "col": 7,
+      "row": 0,
+      "type": "cardio",
+      "cost": 162.22
+    },
+    {
+      "id": "mission4-r0c8",
+      "col": 8,
+      "row": 0,
+      "type": "strength",
+      "cost": 13.23
+    },
+    {
+      "id": "mission4-r0c9",
+      "col": 9,
+      "row": 0,
+      "type": "cardio",
+      "cost": 903.04
+    },
+    {
+      "id": "mission4-r1c0",
+      "col": 0,
+      "row": 1,
+      "type": "strength",
+      "cost": 22.95
+    },
+    {
+      "id": "mission4-r1c1",
+      "col": 1,
+      "row": 1,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r1c2",
+      "col": 2,
+      "row": 1,
+      "type": "strength",
+      "cost": 12.67
+    },
+    {
+      "id": "mission4-r1c3",
+      "col": 3,
+      "row": 1,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r1c4",
+      "col": 4,
+      "row": 1,
+      "type": "strength",
+      "cost": 20.1
+    },
+    {
+      "id": "mission4-r1c5",
+      "col": 5,
+      "row": 1,
+      "type": "cardio",
+      "cost": 294.89
+    },
+    {
+      "id": "mission4-r1c6",
+      "col": 6,
+      "row": 1,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r1c7",
+      "col": 7,
+      "row": 1,
+      "type": "strength",
+      "cost": 19.9
+    },
+    {
+      "id": "mission4-r1c8",
+      "col": 8,
+      "row": 1,
+      "type": "knowledge",
+      "cost": 3.82
+    },
+    {
+      "id": "mission4-r1c9",
+      "col": 9,
+      "row": 1,
+      "type": "strength",
+      "cost": 27.7
+    },
+    {
+      "id": "mission4-r2c0",
+      "col": 0,
+      "row": 2,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r2c1",
+      "col": 1,
+      "row": 2,
+      "type": "knowledge",
+      "cost": 6.81
+    },
+    {
+      "id": "mission4-r2c2",
+      "col": 2,
+      "row": 2,
+      "type": "cardio",
+      "cost": 283.02
+    },
+    {
+      "id": "mission4-r2c3",
+      "col": 3,
+      "row": 2,
+      "type": "strength",
+      "cost": 15.91
+    },
+    {
+      "id": "mission4-r2c4",
+      "col": 4,
+      "row": 2,
+      "type": "strength",
+      "cost": 26.39
+    },
+    {
+      "id": "mission4-r2c5",
+      "col": 5,
+      "row": 2,
+      "type": "knowledge",
+      "cost": 8.05
+    },
+    {
+      "id": "mission4-r2c6",
+      "col": 6,
+      "row": 2,
+      "type": "knowledge",
+      "cost": 6.9
+    },
+    {
+      "id": "mission4-r2c7",
+      "col": 7,
+      "row": 2,
+      "type": "strength",
+      "cost": 16.41
+    },
+    {
+      "id": "mission4-r2c8",
+      "col": 8,
+      "row": 2,
+      "type": "cardio",
+      "cost": 192.74
+    },
+    {
+      "id": "mission4-r2c9",
+      "col": 9,
+      "row": 2,
+      "type": "cardio",
+      "cost": 996.36
+    },
+    {
+      "id": "mission4-r3c0",
+      "col": 0,
+      "row": 3,
+      "type": "cardio",
+      "cost": 385.64
+    },
+    {
+      "id": "mission4-r3c1",
+      "col": 1,
+      "row": 3,
+      "type": "cardio",
+      "cost": 413.84
+    },
+    {
+      "id": "mission4-r3c2",
+      "col": 2,
+      "row": 3,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r3c3",
+      "col": 3,
+      "row": 3,
+      "type": "knowledge",
+      "cost": 7.07
+    },
+    {
+      "id": "mission4-r3c4",
+      "col": 4,
+      "row": 3,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r3c5",
+      "col": 5,
+      "row": 3,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r3c6",
+      "col": 6,
+      "row": 3,
+      "type": "cardio",
+      "cost": 950.43
+    },
+    {
+      "id": "mission4-r3c7",
+      "col": 7,
+      "row": 3,
+      "type": "knowledge",
+      "cost": 9.07
+    },
+    {
+      "id": "mission4-r3c8",
+      "col": 8,
+      "row": 3,
+      "type": "strength",
+      "cost": 28.56
+    },
+    {
+      "id": "mission4-r3c9",
+      "col": 9,
+      "row": 3,
+      "type": "cardio",
+      "cost": 269.57
+    },
+    {
+      "id": "mission4-r4c0",
+      "col": 0,
+      "row": 4,
+      "type": "knowledge",
+      "cost": 8.32
+    },
+    {
+      "id": "mission4-r4c1",
+      "col": 1,
+      "row": 4,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r4c2",
+      "col": 2,
+      "row": 4,
+      "type": "knowledge",
+      "cost": 7.47
+    },
+    {
+      "id": "mission4-r4c3",
+      "col": 3,
+      "row": 4,
+      "type": "knowledge",
+      "cost": 5.37
+    },
+    {
+      "id": "mission4-r4c4",
+      "col": 4,
+      "row": 4,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r4c5",
+      "col": 5,
+      "row": 4,
+      "type": "cardio",
+      "cost": 425.26
+    },
+    {
+      "id": "mission4-r4c6",
+      "col": 6,
+      "row": 4,
+      "type": "cardio",
+      "cost": 229.15
+    },
+    {
+      "id": "mission4-r4c7",
+      "col": 7,
+      "row": 4,
+      "type": "strength",
+      "cost": 27.47
+    },
+    {
+      "id": "mission4-r4c8",
+      "col": 8,
+      "row": 4,
+      "type": "strength",
+      "cost": 19.46
+    },
+    {
+      "id": "mission4-r4c9",
+      "col": 9,
+      "row": 4,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r5c0",
+      "col": 0,
+      "row": 5,
+      "type": "cardio",
+      "cost": 425.15
+    },
+    {
+      "id": "mission4-r5c1",
+      "col": 1,
+      "row": 5,
+      "type": "cardio",
+      "cost": 494.63
+    },
+    {
+      "id": "mission4-r5c2",
+      "col": 2,
+      "row": 5,
+      "type": "cardio",
+      "cost": 721.96
+    },
+    {
+      "id": "mission4-r5c3",
+      "col": 3,
+      "row": 5,
+      "type": "strength",
+      "cost": 14.84
+    },
+    {
+      "id": "mission4-r5c4",
+      "col": 4,
+      "row": 5,
+      "type": "knowledge",
+      "cost": 8.41
+    },
+    {
+      "id": "mission4-r5c5",
+      "col": 5,
+      "row": 5,
+      "type": "cardio",
+      "cost": 663.81
+    },
+    {
+      "id": "mission4-r5c6",
+      "col": 6,
+      "row": 5,
+      "type": "cardio",
+      "cost": 206.8
+    },
+    {
+      "id": "mission4-r5c7",
+      "col": 7,
+      "row": 5,
+      "type": "strength",
+      "cost": 17.55
+    },
+    {
+      "id": "mission4-r5c8",
+      "col": 8,
+      "row": 5,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r5c9",
+      "col": 9,
+      "row": 5,
+      "type": "cardio",
+      "cost": 831.62
+    },
+    {
+      "id": "mission4-r6c0",
+      "col": 0,
+      "row": 6,
+      "type": "knowledge",
+      "cost": 6.37
+    },
+    {
+      "id": "mission4-r6c1",
+      "col": 1,
+      "row": 6,
+      "type": "cardio",
+      "cost": 300.04
+    },
+    {
+      "id": "mission4-r6c2",
+      "col": 2,
+      "row": 6,
+      "type": "strength",
+      "cost": 22.38
+    },
+    {
+      "id": "mission4-r6c3",
+      "col": 3,
+      "row": 6,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r6c4",
+      "col": 4,
+      "row": 6,
+      "type": "strength",
+      "cost": 22.55
+    },
+    {
+      "id": "mission4-r6c5",
+      "col": 5,
+      "row": 6,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r6c6",
+      "col": 6,
+      "row": 6,
+      "type": "knowledge",
+      "cost": 7.88
+    },
+    {
+      "id": "mission4-r6c7",
+      "col": 7,
+      "row": 6,
+      "type": "knowledge",
+      "cost": 7.43
+    },
+    {
+      "id": "mission4-r6c8",
+      "col": 8,
+      "row": 6,
+      "type": "knowledge",
+      "cost": 7.25
+    },
+    {
+      "id": "mission4-r6c9",
+      "col": 9,
+      "row": 6,
+      "type": "cardio",
+      "cost": 531.51
+    },
+    {
+      "id": "mission4-r7c0",
+      "col": 0,
+      "row": 7,
+      "type": "cardio",
+      "cost": 498.58
+    },
+    {
+      "id": "mission4-r7c1",
+      "col": 1,
+      "row": 7,
+      "type": "strength",
+      "cost": 23.81
+    },
+    {
+      "id": "mission4-r7c2",
+      "col": 2,
+      "row": 7,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r7c3",
+      "col": 3,
+      "row": 7,
+      "type": "knowledge",
+      "cost": 8.72
+    },
+    {
+      "id": "mission4-r7c4",
+      "col": 4,
+      "row": 7,
+      "type": "cardio",
+      "cost": 205.32
+    },
+    {
+      "id": "mission4-r7c5",
+      "col": 5,
+      "row": 7,
+      "type": "strength",
+      "cost": 22.58
+    },
+    {
+      "id": "mission4-r7c6",
+      "col": 6,
+      "row": 7,
+      "type": "strength",
+      "cost": 25.26
+    },
+    {
+      "id": "mission4-r7c7",
+      "col": 7,
+      "row": 7,
+      "type": "strength",
+      "cost": 25.04
+    },
+    {
+      "id": "mission4-r7c8",
+      "col": 8,
+      "row": 7,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r7c9",
+      "col": 9,
+      "row": 7,
+      "type": "cardio",
+      "cost": 640.29
+    },
+    {
+      "id": "mission4-r8c0",
+      "col": 0,
+      "row": 8,
+      "type": "strength",
+      "cost": 29.37
+    },
+    {
+      "id": "mission4-r8c1",
+      "col": 1,
+      "row": 8,
+      "type": "strength",
+      "cost": 27.91
+    },
+    {
+      "id": "mission4-r8c2",
+      "col": 2,
+      "row": 8,
+      "type": "cardio",
+      "cost": 995.48
+    },
+    {
+      "id": "mission4-r8c3",
+      "col": 3,
+      "row": 8,
+      "type": "knowledge",
+      "cost": 6.7
+    },
+    {
+      "id": "mission4-r8c4",
+      "col": 4,
+      "row": 8,
+      "type": "cardio",
+      "cost": 101.99
+    },
+    {
+      "id": "mission4-r8c5",
+      "col": 5,
+      "row": 8,
+      "type": "strength",
+      "cost": 29.65
+    },
+    {
+      "id": "mission4-r8c6",
+      "col": 6,
+      "row": 8,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r8c7",
+      "col": 7,
+      "row": 8,
+      "type": "strength",
+      "cost": 27.34
+    },
+    {
+      "id": "mission4-r8c8",
+      "col": 8,
+      "row": 8,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r8c9",
+      "col": 9,
+      "row": 8,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r9c0",
+      "col": 0,
+      "row": 9,
+      "type": "strength",
+      "isEntry": true,
+      "cost": 13.21
+    },
+    {
+      "id": "mission4-r9c1",
+      "col": 1,
+      "row": 9,
+      "type": "strength",
+      "cost": 15.92
+    },
+    {
+      "id": "mission4-r9c2",
+      "col": 2,
+      "row": 9,
+      "type": "quiz"
+    },
+    {
+      "id": "mission4-r9c3",
+      "col": 3,
+      "row": 9,
+      "type": "strength",
+      "cost": 17.3
+    },
+    {
+      "id": "mission4-r9c4",
+      "col": 4,
+      "row": 9,
+      "type": "strength",
+      "cost": 18.75
+    },
+    {
+      "id": "mission4-r9c5",
+      "col": 5,
+      "row": 9,
+      "type": "knowledge",
+      "cost": 9.04
+    },
+    {
+      "id": "mission4-r9c6",
+      "col": 6,
+      "row": 9,
+      "type": "strength",
+      "cost": 24.48
+    },
+    {
+      "id": "mission4-r9c7",
+      "col": 7,
+      "row": 9,
+      "type": "cardio",
+      "cost": 188.32
+    },
+    {
+      "id": "mission4-r9c8",
+      "col": 8,
+      "row": 9,
+      "type": "knowledge",
+      "cost": 6.45
+    },
+    {
+      "id": "mission4-r9c9",
+      "col": 9,
+      "row": 9,
+      "type": "knowledge",
+      "cost": 8.41
+    }
+  ]
+}
