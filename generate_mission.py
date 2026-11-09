@@ -15,10 +15,12 @@ to index.json (lastUpdate is bumped automatically).
 The hidden image is resolved in this order:
   1. explicit --image path (must exist or be a URL),
   2. an existing images/mission_X.<jpg|png|webp> file,
-  3. generated via make_image.py — --prompt, then mission_settings.json
-     "imagePrompt" (a {number}/{title} template), then a built-in default.
-     Needs KENERATE_API_KEY in .env; the file is saved as
-     images/mission_X.<ext>.
+  3. generated via make_image.py — the prompt comes from --prompt, else
+     prompt.py (LLM via OpenRouter, appended to the prompt.json pool),
+     else mission_settings.json "imagePrompt" (a {number}/{title}
+     template) / a built-in default. Needs KENERATE_API_KEY (+ the
+     OPENROUTER_API_KEY for prompt.py) in .env; the file is saved as
+     images/mission_X.<ext> and the prompt lands in "prompt_description".
 
 All generation parameters live in mission_settings.json (next to this
 script) — edit it to tune defaults; CLI flags override for this run only.
@@ -43,6 +45,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 SETTINGS_FILE = ROOT / "mission_settings.json"
 INDEX_FILE = ROOT / "index.json"
+PROMPTS_FILE = ROOT / "prompt.json"
 TILE_TYPES = ("cardio", "strength", "knowledge", "quiz")
 DEFAULT_FRACTIONS = {"cardio": 0.2, "strength": 0.2, "knowledge": 0.2, "quiz": 0.4}
 IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp")
@@ -108,23 +111,38 @@ def allocate_counts(total: int, fractions: dict[str, float]) -> dict[str, int]:
     return counts
 
 
-def resolve_image(args: argparse.Namespace, settings: dict, number: int, parser: argparse.ArgumentParser) -> str:
-    """Returns the repo-relative image path for the mission JSON.
+def substitute_prompt(template: str, number: int, title: str) -> str:
+    return template.replace("{number}", str(number)).replace("{title}", title)
+
+
+def resolve_image(args: argparse.Namespace, settings: dict, number: int, parser: argparse.ArgumentParser) -> tuple[str, str | None]:
+    """Returns (repo-relative image path, prompt used for the image or None).
 
     Precedence: explicit --image > existing images/mission_X.* > generated
     via make_image.py (--prompt → settings imagePrompt → built-in default;
-    {number} and {title} placeholders are substituted).
+    {number} and {title} placeholders are substituted). A prompt passed via
+    --prompt is returned even when the image itself already exists.
     """
+    user_prompt = substitute_prompt(args.prompt, number, args.title) if args.prompt else None
     if args.image is not None:
         if not (ROOT / args.image).is_file() and not args.image.startswith("http"):
             parser.error(f"image not found: {args.image}")
-        return args.image
+        return args.image, user_prompt
     for ext in IMAGE_EXTENSIONS:
         candidate = ROOT / "images" / f"mission_{number}{ext}"
         if candidate.is_file():
-            return f"images/mission_{number}{ext}"
-    prompt = (args.prompt or settings.get("imagePrompt") or DEFAULT_IMAGE_PROMPT)
-    prompt = prompt.replace("{number}", str(number)).replace("{title}", args.title)
+            return f"images/mission_{number}{ext}", user_prompt
+    prompt = user_prompt
+    if prompt is None:
+        # prompt.py asks the LLM for a new prompt and appends it to the
+        # prompt.json pool itself; fall back to the static templates when
+        # it is unavailable (missing key, network, etc.).
+        try:
+            from prompt import generate_prompt
+            prompt = generate_prompt()
+        except Exception as e:
+            print(f"prompt.py failed ({e}) — falling back to template prompt")
+            prompt = substitute_prompt(settings.get("imagePrompt") or DEFAULT_IMAGE_PROMPT, number, args.title)
     # Lazy import: make_image needs requests, dotenv and KENERATE_API_KEY —
     # users who only supply --image shouldn't require any of that.
     try:
@@ -133,7 +151,7 @@ def resolve_image(args: argparse.Namespace, settings: dict, number: int, parser:
         parser.error(f"cannot import make_image.py ({e}) — drop images/mission_{number}.jpg into the repo or pass --image")
     (ROOT / "images").mkdir(exist_ok=True)
     saved = generate_image(prompt, str(ROOT / "images" / f"mission_{number}"))
-    return Path(saved).resolve().relative_to(ROOT).as_posix()
+    return Path(saved).resolve().relative_to(ROOT).as_posix(), prompt
 
 
 def update_index(out_name: str) -> None:
@@ -148,6 +166,17 @@ def update_index(out_name: str) -> None:
         missions.append(out_name)
     index["lastUpdate"] = datetime.now().strftime("%Y-%m-%d %H:%M")
     INDEX_FILE.write_text(json.dumps(index, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def update_prompts(out_name: str, prompt_description: str) -> None:
+    """Append the mission's image prompt to the prompt.json prompt pool.
+    "not published" placeholders and duplicates are skipped."""
+    if prompt_description == "not published":
+        return
+    prompts = json.loads(PROMPTS_FILE.read_text(encoding="utf-8")) if PROMPTS_FILE.is_file() else []
+    if prompt_description not in prompts:
+        prompts.append(prompt_description)
+        PROMPTS_FILE.write_text(json.dumps(prompts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def main() -> int:
@@ -177,7 +206,7 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=None, help="RNG seed for reproducible output")
     args = parser.parse_args()
 
-    image = resolve_image(args, s, number, parser)
+    image, image_prompt = resolve_image(args, s, number, parser)
 
     cardio = args.cardio or parse_range(s.get("cardio", "10:30"))
     strength = args.strength or parse_range(s.get("strength", "10:30"))
@@ -226,6 +255,7 @@ def main() -> int:
         "title": args.title,
         "sortOrder": args.sort_order,
         "image": image,
+        "prompt_description": image_prompt or "not published",
         "gridColumns": cols,
         "gridRows": rows,
         "rewardXp": args.reward_xp,
@@ -242,6 +272,7 @@ def main() -> int:
     out_path = ROOT / args.out
     out_path.write_text(json.dumps(mission, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     update_index(args.out)
+    update_prompts(args.out, mission["prompt_description"])
     print(f"wrote {out_path.name} + index.json: {cols}x{rows} = {counts['cardio']} cardio, {counts['strength']} strength, {counts['knowledge']} knowledge, {counts['quiz']} quiz; image {image}; entry at (0,{rows - 1})")
     return 0
 

@@ -674,5 +674,6 @@
       "type": "quiz"
     }
   ],
-  "description": "Your first field assignment. Uncover the surveillance photo hidden under the grid - tile by tile."
+  "description": "Your first field assignment. Uncover the surveillance photo hidden under the grid - tile by tile.",
+  "prompt_description": "not published"
 }

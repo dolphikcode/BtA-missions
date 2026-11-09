@@ -7,6 +7,7 @@ From each of the categories below, select a specified number of terms to create 
 - Vary the number of women, professions, locations, hair/appearance, and clothing across prompts.
 - Prefer less common combinations over the most obvious sexual ones.
 - Never generate more than one prompt using the same profession or the same location in a single batch.
+- There has to be prompt for ONLY ONE scene, not two, not four
 
 **Number of Females on image - choose 1 (force variety across prompts):**
 One, Two, Group

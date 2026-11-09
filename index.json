@@ -1,6 +1,6 @@
 {
   "formatVersion": 3,
-  "lastUpdate": "2026-11-08 11:08",
+  "lastUpdate": "2026-11-09 16:52",
   "exercises": [
     "exercises.json"
   ],
@@ -9,6 +9,8 @@
     "mission_2.json",
     "mission_3.json",
     "mission_4.json",
-    "mission_5.json"
+    "mission_5.json",
+    "mission_6.json",
+    "mission_7.json"
   ]
 }
